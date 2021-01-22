@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 
-import sys,argparse
+import argparse
 import homoglyphs as hg
 
 def homoglyph_generator(stringInput):
