@@ -32,7 +32,7 @@ def homoglyph_generator(stringInput):
                 
                 # Print user's input + TLD (if inputted), along with verbose info + bytecode of swapped homoglyph
                 else:
-                    print(''.join(myInput) + tld + " --- The letter " + letter + " was replaced with " + glyph \
+                    print(''.join(myInput) + tld + " --- The character " + letter + " was replaced with " + glyph \
                     + ". (Bytecode: " + str(glyph.encode('utf-8')).replace("'","").replace("b","",1) + ")")
             else:
                 print(''.join(myInput) + tld)
