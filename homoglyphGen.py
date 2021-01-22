@@ -2,6 +2,7 @@
 
 import argparse
 import homoglyphs as hg
+from pathlib import Path
 
 def homoglyph_generator(stringInput):
     hg.Homoglyphs(languages={'cz', 'et', 'sk', 'bg', 'hu', 'en', 'es', 'be', 'vi', 'hr', 'de', 'lt', 'ru', 'fi', 'th', 'nl', 'pt', 'eo', \
@@ -44,7 +45,7 @@ if __name__ == "__main__":
     # Parse command line
     parser = argparse.ArgumentParser()
     parser.add_argument("-i", "--input",
-                        help="(required) specify a string as input (e.g. 'john.smith@example.com')",
+                        help="(required) accepts either a string or file of line-separated strings as input (e.g. 'john.smith@example.com')",
                         required="True", action="store")
     parser.add_argument("-v", "--verbose",
                         help="verbose output includes referencing of substituted character, substituting \
@@ -52,4 +53,12 @@ if __name__ == "__main__":
                         action="store_true")
     args = parser.parse_args()
 
-homoglyph_generator(args.input)
+    # Handling for different inputs (file vs string)
+    myFile = Path(args.input)
+    if myFile.is_file():
+        with open (args.input) as f:
+            lines = [line.rstrip() for line in f]
+            for line in lines:
+                homoglyph_generator(line)
+    else:
+        homoglyph_generator(args.input)
