@@ -13,3 +13,4 @@ optional arguments:
   -v, --verbose         verbose output includes referencing of substituted
                         character, substituting character and UTF-8 code
 ```
+
