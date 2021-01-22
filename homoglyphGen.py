@@ -27,7 +27,7 @@ def homoglyph_generator(stringInput):
 
                 # Starting item in each letter's homoglyph list is its original ascii representation, hence skip verbose strings
                 if glyphList.index(glyph) == 0:
-                    print(''.join(myInput) + tld + " --- No replacmeents made.")
+                    print(''.join(myInput) + tld + " --- No replacements made.")
                 
                 # Print user's input + TLD (if inputted), along with verbose info + bytecode of swapped homoglyph
                 else:
