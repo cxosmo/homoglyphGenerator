@@ -4,7 +4,8 @@ import sys,argparse
 import homoglyphs as hg
 
 def homoglyph_generator(stringInput):
-    hg.Homoglyphs(languages={'cz', 'et', 'sk', 'bg', 'hu', 'en', 'es', 'be', 'vi', 'hr', 'de', 'lt', 'ru', 'fi', 'th', 'nl', 'pt', 'eo', 'da', 'ca', 'pl', 'tr', 'el', 'mk', 'he', 'ar', 'lv', 'sr', 'sl', 'it', 'fr', 'ro'})
+    hg.Homoglyphs(languages={'cz', 'et', 'sk', 'bg', 'hu', 'en', 'es', 'be', 'vi', 'hr', 'de', 'lt', 'ru', 'fi', 'th', 'nl', 'pt', 'eo', \
+         'da', 'ca', 'pl', 'tr', 'el', 'mk', 'he', 'ar', 'lv', 'sr', 'sl', 'it', 'fr', 'ro'})
     
     # Basic logic for checking if email passed as input in order to exclude TLDs from homoglyph swapping
     if "@" in stringInput:
@@ -30,7 +31,8 @@ def homoglyph_generator(stringInput):
                 
                 # Print user's input + TLD (if inputted), along with verbose info + bytecode of swapped homoglyph
                 else:
-                    print(''.join(myInput) + tld + " --- The letter " + letter + " was replaced with " + glyph + ". (Bytecode: " + str(glyph.encode('utf-8')).replace("'","").replace("b","",1) + ")")
+                    print(''.join(myInput) + tld + " --- The letter " + letter + " was replaced with " + glyph \
+                    + ". (Bytecode: " + str(glyph.encode('utf-8')).replace("'","").replace("b","",1) + ")")
             else:
                 print(''.join(myInput) + tld)
             
