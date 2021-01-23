@@ -3,13 +3,14 @@
 import argparse
 import homoglyphs as hg
 from pathlib import Path
+import re
 
 def homoglyph_generator(stringInput):
     hg.Homoglyphs(languages={'cz', 'et', 'sk', 'bg', 'hu', 'en', 'es', 'be', 'vi', 'hr', 'de', 'lt', 'ru', 'fi', 'th', 'nl', 'pt', 'eo', \
          'da', 'ca', 'pl', 'tr', 'el', 'mk', 'he', 'ar', 'lv', 'sr', 'sl', 'it', 'fr', 'ro'})
     
-    # Basic logic for checking if email passed as input in order to exclude TLDs from homoglyph swapping
-    if "@" in stringInput:
+    # Basic regex for checking if email passed as input in order to exclude TLDs from homoglyph swapping
+    if re.match(r"^^[a-zA-Z0-9]+[\w\.\-!#$%&()'*\+\-/=?^_`{|}~]+[@][\w+\-]+[.]\w{2,24}$", stringInput):
         tld = stringInput[stringInput.rindex('.'):]
         stringInput = stringInput[:stringInput.rindex('.')]
     else:
@@ -45,7 +46,8 @@ if __name__ == "__main__":
     # Parse command line
     parser = argparse.ArgumentParser()
     parser.add_argument("-i", "--input",
-                        help="(required) accepts either a string or file of line-separated strings as input (e.g. 'john.smith@example.com')",
+                        help="(required) accepts either a string or file of line-separated strings as input \
+                              (e.g. 'john.smith@example.com')",
                         required="True", action="store")
     parser.add_argument("-v", "--verbose",
                         help="verbose output includes referencing of substituted character, substituting \
