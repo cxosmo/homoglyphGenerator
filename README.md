@@ -8,8 +8,7 @@ usage: glyphs.py [-h] -i INPUT [-v]
 optional arguments:
   -h, --help            show this help message and exit
   -i INPUT, --input INPUT
-                        (required) specify a string as input (e.g.
-                        'john.smith@example.com')
+                        (required) specify a string or file as input
   -v, --verbose         verbose output includes referencing of substituted
                         character, substituting character and UTF-8 code
 ```
