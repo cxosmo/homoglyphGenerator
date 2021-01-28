@@ -4,6 +4,7 @@ import argparse
 import homoglyphs as hg
 from pathlib import Path
 import re
+import sys
 
 def homoglyph_generator(stringInput):
     hg.Homoglyphs(languages={'cz', 'et', 'sk', 'bg', 'hu', 'en', 'es', 'be', 'vi', 'hr', 'de', 'lt', 'ru', 'fi', 'th', 'nl', 'pt', 'eo', \
@@ -53,11 +54,17 @@ if __name__ == "__main__":
                         help="verbose output includes referencing of substituted character, substituting \
                               character and UTF-8 code.",
                         action="store_true")
+    
+    if len(sys.argv) < 2:
+        parser.print_help()
+        sys.exit(1)
+    
     args = parser.parse_args()
 
     # Handling for different inputs (file vs string)
-    myFile = Path(args.input)
-    if myFile.is_file():
+
+    
+    if Path(args.input).is_file():
         with open (args.input) as f:
             lines = [line.rstrip() for line in f]
             for line in lines:
