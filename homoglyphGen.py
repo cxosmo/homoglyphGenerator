@@ -30,14 +30,14 @@ def homoglyph_generator(stringInput):
 
                 # Starting item in each letter's homoglyph list is its original ascii representation, hence skip verbose strings
                 if glyphList.index(glyph) == 0:
-                    print(''.join(myInput) + tld + " --- No replacements made.")
+                    print(f"{''.join(myInput)}{tld} --- No replacements made.")
                 
                 # Print user's input + TLD (if inputted), along with verbose info + bytecode of swapped homoglyph
                 else:
-                    print(''.join(myInput) + tld + " --- The character " + letter + " was replaced with " + glyph \
-                    + ". (Bytecode: " + str(glyph.encode('utf-8')).replace("'","").replace("b","",1) + ")")
+                    print(f"""{''.join(myInput)}{tld} --- The character {letter} was replaced with {glyph}
+                    (Bytecode: {str(glyph.encode('utf-8')).replace("'",'').replace('b','',1)})""")
             else:
-                print(''.join(myInput) + tld)
+                print(f"{''.join(myInput)}{tld}")
             
             # Reset user input to pre-swapped state to avoid more than one homoglyph in output
             myInput[counter] = letter
