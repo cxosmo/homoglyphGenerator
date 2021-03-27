@@ -3,7 +3,7 @@ A Python script that takes a string as input and outputs available character-by-
 
 ## Usage
 ```python
-usage: glyphs.py [-h] -i INPUT [-v]
+usage: homoglyphGen.py [-h] -i INPUT [-v]
 
 optional arguments:
   -h, --help            show this help message and exit
