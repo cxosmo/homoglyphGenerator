@@ -1,9 +1,9 @@
-# homoglyphGen
+# homoglyph_generator
 A Python script that takes a string as input and outputs available character-by-character homoglyph permutations of it. 
 
 ## Usage
-```python
-usage: homoglyphGen.py [-h] -i INPUT [-v]
+```
+usage: homoglyph_generator.py [-h] -i INPUT [-v]
 
 optional arguments:
   -h, --help            show this help message and exit
