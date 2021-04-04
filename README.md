@@ -1,7 +1,7 @@
 # homoglyph_generator
 A Python script that takes a string as input and outputs available character-by-character homoglyph permutations of it. 
 
-_Printing of Unicode characters can be handled inconsistently depending on environmental factors (i.e. operating system/locale settings). Use the _`-v`_ flag to include raw Unicode of the substituted character._ 
+_Printing of Unicode characters can be handled inconsistently depending on environmental factors (i.e. operating system/locale settings). Use the _`--verbose`_ flag to include raw Unicode of the substituted character._ 
 
 ## Usage
 ```
